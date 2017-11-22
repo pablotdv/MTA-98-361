@@ -11,8 +11,8 @@ namespace Scenario01
                 Console.WriteLine("Enter the quantity of products you will buy (numbers only): ");
                 string input = Console.ReadLine();
                 try
-                {                    
-                    int quantity = int.Parse(input);
+                {
+                    ushort quantity = ushort.Parse(input);
                     if (quantity == 0)
                     {
                         Console.WriteLine($"Please, enter a quantity greater than zero.");
@@ -31,7 +31,7 @@ namespace Scenario01
                 catch(OverflowException)
                 {
                     Console.WriteLine($"The number {input} is too big to an integer type.");
-                    Console.WriteLine($"Please type a number less than {int.MaxValue}.");
+                    Console.WriteLine($"Please type a number less than {ushort.MaxValue}.");
                     PressKeyToContinue();
                 }                
             }
@@ -44,7 +44,7 @@ namespace Scenario01
             Console.Clear();
         }
 
-        public static int Discount(int quantity)
+        public static int Discount(ushort quantity)
         {
             if (quantity < 10)
                 return 5;
